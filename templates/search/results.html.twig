@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Results for {{ query|raw }}</h1>
+    <ul>
+    {% for article in results %}
+        <li><a href="{{ path('article_show', {id: article.id}) }}">{{ article.title }}</a>
+            <p>{{ article.summary }}</p></li>
+    {% else %}
+        <li>No article found.</li>
+    {% endfor %}
+    </ul>
+{% endblock %}

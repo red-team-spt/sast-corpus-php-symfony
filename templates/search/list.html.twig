@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Latest articles</h1>
+    {% for article in articles %}
+        <article><h2>{{ article.title }}</h2><p>{{ article.summary }}</p></article>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,13 @@
+parameters:
+    app.articles_per_page: 20
+    app.webhook_secret: 'whsec-demo-31b7d2c4a9e84f0aa6'
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        bind:
+            $webhookSecret: '%app.webhook_secret%'
+
+    App\:
+        resource: '../src/'
